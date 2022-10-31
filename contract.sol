@@ -16,6 +16,7 @@ contract Alchemy is ERC721, ERC721Enumerable, ERC721URIStorage {
 
     function safeMint(address to, string memory uri) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
+        require(_tokenIdCounter.current() <= MAX_SUPPLY, "I'm sorry, we reached the cap");
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
