@@ -29,7 +29,7 @@
       "value": "Cheerful"
     }, 
     {
-      "display_type": "Artist", 
+      "trait_type": "Artist", 
       "value": "Yuzu"
     }]
   }
