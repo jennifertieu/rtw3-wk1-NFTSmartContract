@@ -1,0 +1,35 @@
+{ 
+  "description": "Alchemy Road To Web3 Week 1 NFT deployed ERC721 smart contract on Goerli",
+  "external_url": "",
+  "image": "https://ipfs.filebase.io/ipfs/QmcLMjgaSKfcyh5ryC4hxt8diEcAcryGueuV68JuEey8K8",
+  "name": "Aoi Satoru (Azuki#2935) by Yuzu", 
+  "attributes": [
+    {
+      "trait_type": "Base", 
+      "value": "Azuki"
+    }, 
+    {
+      "trait_type": "Eyes", 
+      "value": "Blue with Glasses"
+    }, 
+    {
+      "trait_type": "Mouth", 
+      "value": "Smiling"
+    }, 
+    {
+      "trait_type": "Hair", 
+      "value": "Short"
+    }, 
+    {
+      "trait_type": "Hair Piece", 
+      "value": "Blue Headband" 
+    }, 
+    {
+      "trait_type": "Personality", 
+      "value": "Cheerful"
+    }, 
+    {
+      "display_type": "Artist", 
+      "value": "Yuzu"
+    }]
+  }
