@@ -10,13 +10,17 @@ contract Alchemy is ERC721, ERC721Enumerable, ERC721URIStorage {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
-    uint256 MAX_SUPPLY = 10000;
+    uint256 public constant MAX_SUPPLY = 10000;
+    uint256 public constant USER_MAX = 5;
+
+    mapping(address => uint256) public mintWallets;
 
     constructor() ERC721("Alchemy", "ALCH") {}
 
     function safeMint(address to, string memory uri) public {
         uint256 tokenId = _tokenIdCounter.current();
         require(_tokenIdCounter.current() <= MAX_SUPPLY, "I'm sorry, we reached the cap");
+        require(mintWallets[msg.sender] <= USER_MAX, "I'm sorry, you reached the max amount for this wallet.");
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
