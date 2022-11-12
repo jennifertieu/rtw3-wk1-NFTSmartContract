@@ -19,11 +19,19 @@ contract MyToken is ERC721, ERC721Enumerable, ERC721URIStorage {
 
 
     function safeMint(address to, string memory uri) public {
+        // get the current token ID
         uint256 tokenId = _tokenIdCounter.current();
+        // check if token ID is the max supply
         require(_tokenIdCounter.current() <= MAX_SUPPLY, "I'm sorry, we reached the cap");
+        // check if the wallet address hasn't minted the max user amount
         require(mintWallets[msg.sender] <= USER_MAX, "I'm sorry, you reached the max amount for this wallet.");
+        // increment the amount of token minted for the address
+        mintWallets[msg.sender] +=  tokenId;
+        // increment token counter
         _tokenIdCounter.increment();
+        // mint token to the wallet address
         _safeMint(to, tokenId);
+        // set token URI
         _setTokenURI(tokenId, uri);
     }
 
