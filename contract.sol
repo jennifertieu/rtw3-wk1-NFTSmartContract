@@ -26,7 +26,7 @@ contract MyToken is ERC721, ERC721Enumerable, ERC721URIStorage {
         // check if the wallet address hasn't minted the max user amount
         require(mintWallets[msg.sender] <= USER_MAX, "I'm sorry, you reached the max amount for this wallet.");
         // increment the amount of token minted for the address
-        mintWallets[msg.sender] +=  tokenId;
+        mintWallets[msg.sender]++;
         // increment token counter
         _tokenIdCounter.increment();
         // mint token to the wallet address
